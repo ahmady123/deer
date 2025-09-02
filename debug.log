@@ -1,0 +1,42 @@
+[2024-10-12 17:44:39] Script started
+[2024-10-12 17:44:39] Session started
+[2024-10-12 17:44:39] Database connected successfully
+[2024-10-12 17:44:39] Sign-in attempt for email: fitruzirte@gufum.com
+[2024-10-12 17:44:39] User found in database
+[2024-10-12 17:44:39] Stored hash: 61243c7b9a4022cb3f8dc3106767ed12
+[2024-10-12 17:44:39] Entered password: ahmad
+[2024-10-12 17:44:39] Password verification failed
+[2024-10-12 17:44:39] Script ended. Response: {"error":"Incorrect password"}
+[2024-10-12 17:44:51] Script started
+[2024-10-12 17:44:51] Session started
+[2024-10-12 17:44:51] Database connected successfully
+[2024-10-12 17:44:51] Sign-in attempt for email: fitruzirte@gufum.com
+[2024-10-12 17:44:51] User found in database
+[2024-10-12 17:44:51] Stored hash: 61243c7b9a4022cb3f8dc3106767ed12
+[2024-10-12 17:44:51] Entered password: ahmad
+[2024-10-12 17:44:51] Password verification failed
+[2024-10-12 17:44:51] Script ended. Response: {"error":"Incorrect password"}
+[2024-10-12 17:45:05] Script started
+[2024-10-12 17:45:05] Session started
+[2024-10-12 17:45:05] Database connected successfully
+[2024-10-12 17:45:05] Sign-in attempt for email: fitruzirte@gufum.com
+[2024-10-12 17:45:05] User found in database
+[2024-10-12 17:45:05] Stored hash: 61243c7b9a4022cb3f8dc3106767ed12
+[2024-10-12 17:45:05] Entered password: ahmad
+[2024-10-12 17:45:05] Password verification failed
+[2024-10-12 17:45:05] Script ended. Response: {"error":"Incorrect password"}
+[2024-10-12 17:45:35] Script started
+[2024-10-12 17:45:35] Session started
+[2024-10-12 17:45:35] Database connected successfully
+[2024-10-12 17:45:35] Sign-in attempt for email: nadib29382@scarden.com
+[2024-10-12 17:45:35] User not found
+[2024-10-12 17:45:35] Script ended. Response: {"error":"User not found"}
+[2024-10-12 17:45:57] Script started
+[2024-10-12 17:45:57] Session started
+[2024-10-12 17:45:57] Database connected successfully
+[2024-10-12 17:45:57] Sign-in attempt for email: fitruzirte@gufum.com
+[2024-10-12 17:45:57] User found in database
+[2024-10-12 17:45:57] Stored hash: 61243c7b9a4022cb3f8dc3106767ed12
+[2024-10-12 17:45:57] Entered password: ahmad
+[2024-10-12 17:45:57] Password verification failed
+[2024-10-12 17:45:57] Script ended. Response: {"error":"Incorrect password"}

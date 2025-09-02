@@ -1,0 +1,130 @@
+
+       
+            input[type="password"],  input[type="email"] {
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                padding: 10px;
+                font-size: 16px;
+                width: 100%; 
+                max-width: 250px; 
+                outline: none;
+                box-shadow: none;
+                background: transparent; 
+                margin-bottom: 20px;
+            }
+            input::placeholder {
+      color: white; 
+    }
+    @media(max-width: 1200px){
+        input::placeholder {
+      color: black; 
+    }
+    }
+    .a {
+        text-align: center;
+        border: 0.5px solid #ccc;
+        border-radius: 30px;
+        width: 400px;
+        height: 300px;
+        padding: 20px;
+        margin-right: 20px;
+        background-color: transparent;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        justify-content: center;
+       margin: 0 auto;
+       }   
+         
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+          body {
+              background-image: url('Untitled Project (4).jpg');
+              background-repeat: no-repeat;
+              margin: 0;
+              padding: 0;
+              height: 100vh;
+           
+          }
+       
+          .navbar-brand {
+              font-size: 1.5rem;
+              font-weight: bold;
+              color: white;
+          }
+          .Btn, #verifyOtpButton, #resetPasswordButton {
+    
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          
+          .Btn:hover, #verifyOtpButton:hover, #resetPasswordButton:hover {
+       
+            background-color: #3e8e41;
+          }
+          
+          .Btn:active, #verifyOtpButton:active, #resetPasswordButton:active {
+     
+            background-color: #3e8e41;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          }
+          
+          .Btn:focus, #verifyOtpButton:focus, #resetPasswordButton:focus {
+
+            box-shadow: 0 0 0 2px #4CAF50;
+          }
+          
+        
+          .Btn, #verifyOtpButton, #resetPasswordButton {
+            transition: background-color 0.2s ease-out;
+          }
+          .input-wrapper {
+            position: relative;
+            width: 300px;
+            left: 30px;
+          }
+          
+          #new-password {
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%; 
+            max-width: 250px; 
+            outline: none;
+            box-shadow: none;
+            background: transparent; 
+            margin-bottom: 20px;
+          }
+          
+          #togglePassword, #toggleSignupPassword {
+            position: absolute;
+            right: 30px; 
+            top: 40%; 
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #ffffff;
+          }
+          
+          @media(max-width: 1200px){
+            #togglePassword, #toggleSignupPassword {
+          color: black; 
+          }
+          }

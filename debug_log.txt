@@ -1,0 +1,308 @@
+Raw Input: {"title":"what if"}
+Decoded JSON: Array
+(
+    [title] => what if
+)
+
+Raw Input: {"title":"what if"}
+Decoded JSON: Array
+(
+    [title] => what if
+)
+
+Raw Input: {"title":"what if"}
+Decoded JSON: Array
+(
+    [title] => what if
+)
+
+Raw Input: {"title":"bmh"}
+Decoded JSON: Array
+(
+    [title] => bmh
+)
+
+Raw Input: {"title":"what if"}
+Decoded JSON: Array
+(
+    [title] => what if
+)
+
+Raw Input: {"title":"hhh"}
+Decoded JSON: Array
+(
+    [title] => hhh
+)
+
+Raw Input: {"title":"ggjyui"}
+Decoded JSON: Array
+(
+    [title] => ggjyui
+)
+
+Raw Input: {"title":"ahmad"}
+Decoded JSON: Array
+(
+    [title] => ahmad
+)
+
+Raw Input: {"title":{"title":"Ways to Keep Your Cereal Fresh By Customizing Trendy Cereal Boxes","view_count":2}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => Ways to Keep Your Cereal Fresh By Customizing Trendy Cereal Boxes
+            [view_count] => 2
+        )
+
+)
+
+Raw Input: {"title":{"title":"Ways to Keep Your Cereal Fresh By Customizing Trendy Cereal Boxes","view_count":2}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => Ways to Keep Your Cereal Fresh By Customizing Trendy Cereal Boxes
+            [view_count] => 2
+        )
+
+)
+
+Raw Input: {"title":{"title":"s","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => s
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"s","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => s
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"s","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => s
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":"Your Article Title"}
+Decoded JSON: Array
+(
+    [title] => Your Article Title
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":{"title":"saaa","view_count":0}}
+Decoded JSON: Array
+(
+    [title] => Array
+        (
+            [title] => saaa
+            [view_count] => 0
+        )
+
+)
+
+Raw Input: {"title":"saaa"}
+Decoded JSON: Array
+(
+    [title] => saaa
+)
+
+Raw Input: {"title":"what if"}
+Decoded JSON: Array
+(
+    [title] => what if
+)
+
+Raw Input: {"title":"what if"}
+Decoded JSON: Array
+(
+    [title] => what if
+)
+
+Raw Input: {"title":"s"}
+Decoded JSON: Array
+(
+    [title] => s
+)
+
+Raw Input: {"title":"j"}
+Decoded JSON: Array
+(
+    [title] => j
+)
+
+Raw Input: {"title":"a"}
+Decoded JSON: Array
+(
+    [title] => a
+)
+
+Raw Input: {"title":"a"}
+Decoded JSON: Array
+(
+    [title] => a
+)
+
+Raw Input: {"title":"eeeeeeee"}
+Decoded JSON: Array
+(
+    [title] => eeeeeeee
+)
+
+Raw Input: {"title":"ws"}
+Decoded JSON: Array
+(
+    [title] => ws
+)
+
+Raw Input: {"title":"The New Year"}
+Decoded JSON: Array
+(
+    [title] => The New Year
+)
+
+Raw Input: {"title":"Unleash Your Creativity with a Custom Box Order"}
+Decoded JSON: Array
+(
+    [title] => Unleash Your Creativity with a Custom Box Order
+)
+
+Raw Input: {"title":"d"}
+Decoded JSON: Array
+(
+    [title] => d
+)
+
+Raw Input: {"title":"d"}
+Decoded JSON: Array
+(
+    [title] => d
+)
+
