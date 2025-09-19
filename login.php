@@ -166,6 +166,34 @@ body {
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
             margin: 10px 0; /* Add some margin for spacing */
         }
+         .login-back-link {
+    color: black; /* Default text color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-decoration: none; /* No underline */
+    position: relative; /* For pseudo-element */
+    transition: color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.login-back-link::after {
+    content: ""; /* Empty content for effect */
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Position slightly below text */
+    width: 0;
+    height: 2px; /* Thin underline */
+    background-color: black; /* Same as text color */
+    transition: width 0.3s ease-in-out; /* Smooth expand effect */
+}
+
+.login-back-link:hover {
+    color: black; /* Keep text color the same */
+}
+
+.login-back-link:hover::after {
+    width: 100%; /* Expand underline */
+}
+
     </style>
 </head>
 <body>
@@ -276,7 +304,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form id="signupForm">
             <input type="email" name="email-signup" id="email-signup" placeholder="Email" required><br>
             <span id="email-error-signup" style="color: red;"></span>
-            <div id="email-exists-error" style="color: red; display: none;">Email already registered. Please use another email or sign in.</div>
+            <div id="email-exists-error" style="color: red; display: none;">Email already in use. Try another or login</div>
         </div>
         <br>
         <div class="input-wrapper">
@@ -396,12 +424,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $.ajax({
                             url: 'send_otp.php',
                             type: 'POST',
-                            data: { toEmail: email, otp: generatedOtp },
+                            data: { email: email, otp: generatedOtp },
                             dataType: 'json',
                             success: function(response) {
                                 if (response.success) {
                                     otpVerificationSection.style.display = 'block';
                                     document.getElementById('signUpSection').style.display = 'none';
+                                    const nnButtons = document.querySelectorAll('.nn');
+        nnButtons.forEach(btn => {
+            btn.replaceWith(btn.cloneNode(true)); // remove old listeners
+        });
+
+        document.querySelectorAll('.nn').forEach(btn => {
+            btn.disabled = false; // make sure button is active
+            btn.addEventListener('click', function () {
+                window.location.href = "login.php";
+            });
+        });
                                 } else {
                                     alert('Error sending OTP: ' + response.error);
                                 }
@@ -486,7 +525,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
             <p>___Or login with___</p>
 
-<a href="https://accounts.google.com/o/oauth2/auth?client_id=295250178189-lgp6p1s9hnahqrtpck4opc1k0tusb6fa.apps.googleusercontent.com&redirect_uri=https://localhost/website/callback.php&response_type=code&scope=email%20profile&access_type=online">
+<a href="https://accounts.google.com/o/oauth2/auth?client_id=295250178189-lgp6p1s9hnahqrtpck4opc1k0tusb6fa.apps.googleusercontent.com&redirect_uri=http://localhost/website/callback.php&response_type=code&scope=email%20profile&access_type=online">
     <button type="button" class="googleBtn">
  <i class="fa-brands fa-google"></i>   &nbsp;&nbsp; 
         Continue with Google
@@ -503,7 +542,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>A verification code has been sent to your email. Please enter it below:</p>
             <input type="text" id="otp" placeholder="Enter OTP" required><br>
             <span id="otp-error" style="color: red;"></span><br>
-            <button id="verifyOtpButton">Verify OTP</button>
+            <button id="verifyOtpButton">Verify OTP</button><br>
+                  <a href="login.php" class="login-back-link"><i class="fa-solid fa-right-to-bracket"></i>Login Back</a>
         </div>
     </div>
 </div>
@@ -545,12 +585,23 @@ document.addEventListener("DOMContentLoaded", function() {
                     $.ajax({
                         url: 'send_otp.php',
                         type: 'POST',
-                        data: { toEmail: email, otp: generatedOtp },
+                        data: {email: email, otp: generatedOtp },
                         dataType: 'json',
                         success: function(response) {
                             if (response.success) {
                                 otpVerificationSection.style.display = 'block';
                                 document.getElementById('signUpSection').style.display = 'none';
+                                const nnButtons = document.querySelectorAll('.nn');
+        nnButtons.forEach(btn => {
+            btn.replaceWith(btn.cloneNode(true)); // remove old listeners
+        });
+
+        document.querySelectorAll('.nn').forEach(btn => {
+            btn.disabled = false; // make sure button is active
+            btn.addEventListener('click', function () {
+                window.location.href = "login.php";
+            });
+        });
                             } else {
                                 alert('Error sending OTP: ' + response.error);
                             }
