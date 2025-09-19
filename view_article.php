@@ -326,7 +326,9 @@ if ($stmt->fetch()) {
   padding: 20px; /* Padding around the content */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  t
+  text-align: center; /* Center text within the popup */
+}
+
     </style>
     </head>
     <body>
@@ -1279,3 +1281,4 @@ document.addEventListener("DOMContentLoaded", function() {
     </html>
 <?php
 }
+
