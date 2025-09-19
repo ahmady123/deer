@@ -253,6 +253,80 @@ if ($stmt->fetch()) {
   height: 450px;
 
 }
+.button{
+      color: #000000;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      border: none;
+      background-color: transparent;
+  }
+
+  .blob1 {
+    position: absolute;
+    width: 40px; 
+    height: 40px; 
+    border-radius: 10px;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(
+      circle 30px at 0% 100%,
+      #3fe9ff,
+      #0000ff80,
+      transparent
+    );
+    box-shadow: -5px 5px 15px #0051ff2d;
+  }
+  
+  .inner {
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    z-index: 3;
+    position: relative;
+    background: radial-gradient(circle 40px at 80% -50%, #777777, #0f1111);
+  }
+  
+  .inner::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    background: radial-gradient(
+      circle 30px at 0% 100%,
+      #00e1ff1a,
+      #0000ff11,
+      transparent
+    );
+    position: absolute;
+  }
+  @media (max-width: 1200px) {
+    .button{
+        text-align: center; 
+        align-items: center;
+        
+    }
+  }
+  .popup-overlay {
+  position: fixed; /* Position the overlay fixed to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex; /* Use flexbox to center the content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.popup-content {
+  background-color: white; /* White background for the popup */
+  padding: 20px; /* Padding around the content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  t
     </style>
     </head>
     <body>
@@ -272,7 +346,32 @@ if ($stmt->fetch()) {
                     <li class="nav-item">
                         <a class="nav-link" href="aboutus.php">About Us</a>
                     </li>          
+                    <?php if (isset($_SESSION['email'])): ?>
+        <li class="nav-item">
+            <button class="button nav-link" id="button1" onclick="location.href='profile.php'">
+                <i class="fa-solid fa-user"></i> Profile
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="button nav-link" id="button2" onclick="toggleLogoutPopup()">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </li>
+        <?php else: ?>
+        <li class="nav-item">
+            <button class="button nav-link" id="button1" onclick="startSession()">
+            <i class="fa-solid fa-right-to-bracket"></i>   Register/Login
+            </button>
+        </li>
+        <?php endif; ?>
                     <li>
+                       <div id="logout-confirmation" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <p>Are you sure you want to log out?</p>
+            <button id="confirm-logout" class="btn btn-danger">Confirm</button>
+            <button id="cancel-logout" class="btn btn-secondary" onclick="toggleLogoutPopup()">Cancel</button>
+        </div>
+    </div>
    </div>
    <div class="input-container">
     <input type="text" id="search-input" class="input-field" placeholder="Search for articles..." autocomplete="off">
@@ -506,7 +605,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(() => console.log('Share successful'))
             .catch((error) => console.error('Error sharing:', error));
         } else {
-            const shareText = `Check out this article: ${articleTitle} - ${articleUrl}`;
+            const shareText = `${articleUrl}`;
             prompt("Copy this link to share:", shareText);
         }
     });
@@ -1038,6 +1137,86 @@ document.addEventListener('DOMContentLoaded', function() {
 .catch(error => console.error('Error deleting article:', error));
 });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    let sessionStarted = false; // Variable to store session status
+
+    // Check session status when the page loads
+    checkSessionStatus();
+
+    // Target both .button and .button1 classes
+    const buttons = document.querySelectorAll('.button, .button1');  
+
+    const logoutConfirmation = document.getElementById('logout-confirmation');
+    const closeButton = document.querySelector('.close-button');
+    const confirmLogoutButton = document.getElementById('confirm-logout');
+    const cancelLogoutButton = document.getElementById('cancel-logout');
+
+    // Ensure buttons exist
+    if (buttons.length === 0) {
+        console.error('Button elements not found');
+    } else {
+        buttons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+                console.log('Button clicked:', event.target.id);  // Log the button click for debugging
+                
+                if (button.id === 'button2') {  // Check if it's the logout button
+                    event.preventDefault();  // Prevent the default action (navigation or form submit)
+                    logoutConfirmation.style.display = 'flex';  // Show the logout confirmation dialog
+                } else {
+                    // Check if session is started
+                    if (sessionStarted) {
+                        console.log('Session started');
+                        window.location.href = 'profile.php';  // Redirect to profile.php
+                    } else {
+                        console.log('Session not started. Redirecting to login page.');
+                        window.location.href = 'login.php';  // Redirect to login
+                    }
+                }
+            });
+        });
+    }
+
+    // Close logout confirmation when close button is clicked
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            logoutConfirmation.style.display = 'none';  // Hide the confirmation dialog
+        });
+    }
+
+    // Confirm logout action
+    if (confirmLogoutButton) {
+        confirmLogoutButton.addEventListener('click', function() {
+            window.location.href = 'logout.php';  // Redirect to logout page
+        });
+    }
+
+    // Cancel logout action
+    if (cancelLogoutButton) {
+        cancelLogoutButton.addEventListener('click', function() {
+            logoutConfirmation.style.display = 'none';  // Hide the confirmation dialog
+        });
+    }
+
+    // Function to check if the session is started
+    function checkSessionStatus() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'check_session.php', true);  // PHP script to check session status
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                sessionStarted = response.sessionStarted;
+                console.log('Session status:', sessionStarted);  // Log session status for debugging
+            } else {
+                console.error('Failed to check session status');
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Request failed');
+        };
+        xhr.send();
+    }
+});
+
 </script>
         <?php if (isset($_SESSION['user_id'])): ?>
     <?php
@@ -1060,7 +1239,40 @@ document.addEventListener('DOMContentLoaded', function() {
         <p>You must complete your profile first.</p>
     <?php endif; ?>
 <?php else: ?>
-    <p>You must be logged in to post a comment.</p>
+    <p>
+  You must be logged in to post a comment. 
+  <a href="login.php" class="login-link">Login here</a>
+</p>
+
+<style>
+  .login-link {
+    color: #2563eb; /* modern blue */
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .login-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s ease;
+  }
+
+  .login-link:hover {
+    color: #1e40af; /* darker blue on hover */
+  }
+
+  .login-link:hover::after {
+    width: 100%; /* animated underline */
+  }
+</style>
+
 <?php endif; ?>
     </div>
     </body>
